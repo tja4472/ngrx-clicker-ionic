@@ -19,6 +19,7 @@ import {RedditActions} from './actions';
 @Component({
   templateUrl: 'build/app.html',
   // config: {}, // http://ionicframework.com/docs/v2/api/config/Config/,
+  /*
   providers: [
     provideStore(
       storeLogger()(combineReducers({ selectedReddit, postsByReddit }))
@@ -27,6 +28,7 @@ import {RedditActions} from './actions';
     runEffects(RedditEffects),
     Reddit
   ]
+  */
 })
 export class ClickerApp {
 

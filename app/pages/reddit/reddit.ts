@@ -15,20 +15,16 @@ import {Subscription} from "rxjs/Subscription";
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [RedditList, RedditSelect, RefreshButton],
-  providers: [RedditModel, RedditEffects],
+  providers: [RedditModel],
   templateUrl: 'build/pages/reddit/reddit.html',
 })
 export class RedditPage {
   private redditActions = new RedditActions();
 
-  private subscription: Subscription;
-  
   constructor(
     private redditModel: RedditModel,
-    private _store: Store<any>,
-    private redditEffects: RedditEffects
+    private _store: Store<any>
   ) { 
-     this.subscription = redditEffects.fetchPosts$.subscribe(_store);
   }
 
   selectReddit(reddit: string) {
@@ -38,10 +34,5 @@ export class RedditPage {
   invalidateReddit(reddit: string) {
     this._store.dispatch(this.redditActions.invalidateReddit(reddit))
     this._store.dispatch(this.redditActions.selectReddit(reddit))
-  }
-  
-  ionViewWillUnload() {
-    console.log('ionViewWillUnload');
-    this.subscription.unsubscribe();
   }
 }

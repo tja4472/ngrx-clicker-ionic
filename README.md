@@ -20,7 +20,7 @@ https://github.com/mgechev/codelyzer
 https://github.com/ngrx/ngrx.github.io
 
 
-https://github.com/driftyco/ionic/issues/6685
+https://github.com/driftyco/ionic/issues/6685 - fixed in beta.8
 
 
 ## Install & Start
