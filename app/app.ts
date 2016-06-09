@@ -1,8 +1,8 @@
 /* tslint:disable */
 'use strict';
-
+import {Component} from '@angular/core';
 import { Type, ViewChild }                    from '@angular/core';
-import { App, Platform, MenuController, Nav } from 'ionic-angular';
+import { ionicBootstrap,Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar }                          from 'ionic-native';
 import { ClickerList }                        from './pages/clickerList/clickerList';
 import { Page2 }                              from './pages/page2/page2';
@@ -16,9 +16,9 @@ import {Reddit} from "./services/reddit";
 import {storeLogger} from "ngrx-store-logger";
 import {RedditActions} from './actions';
 
-@App({
+@Component({
   templateUrl: 'build/app.html',
-  config: {}, // http://ionicframework.com/docs/v2/api/config/Config/,
+  // config: {}, // http://ionicframework.com/docs/v2/api/config/Config/,
   providers: [
     provideStore(
       storeLogger()(combineReducers({ selectedReddit, postsByReddit }))
@@ -68,3 +68,17 @@ export class ClickerApp {
     this.nav.setRoot(page.component);
   };
 }
+
+// Pass the main app component as the first argument
+// Pass any providers for your app in the second argument
+// Set any config for your app as the third argument:
+// http://ionicframework.com/docs/v2/api/config/Config/
+
+ionicBootstrap(ClickerApp, [
+    provideStore(
+      storeLogger()(combineReducers({ selectedReddit, postsByReddit }))
+    ),
+    RedditActions,
+    runEffects(RedditEffects),
+    Reddit
+  ]);

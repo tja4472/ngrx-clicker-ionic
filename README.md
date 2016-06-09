@@ -1,3 +1,6 @@
+## This repo
+https://github.com/tja4472/ngrx-clicker-ionic
+
 ## Based on
 https://github.com/lathonez/clicker
 

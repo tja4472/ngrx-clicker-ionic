@@ -1,7 +1,7 @@
 /* tslint:disable */
 'use strict';
 import {ChangeDetectionStrategy} from '@angular/core';
-import { Page } from 'ionic-angular';
+import {Component} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {RedditModel} from "../../services/reddit-model";
 import {RedditList} from '../../components/reddit-list/reddit-list';
@@ -12,7 +12,7 @@ import {RedditActions} from '../../actions';
 import {RedditEffects} from "../../effects/reddit-effects";
 import {Subscription} from "rxjs/Subscription";
 
-@Page({
+@Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [RedditList, RedditSelect, RefreshButton],
   providers: [RedditModel, RedditEffects],
