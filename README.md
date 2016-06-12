@@ -19,8 +19,11 @@ https://github.com/mgechev/codelyzer
 
 https://github.com/ngrx/ngrx.github.io
 
+A Comprehensive Guide to Test-First Development with Redux, React, and Immutable
+http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
 
 https://github.com/driftyco/ionic/issues/6685 - fixed in beta.8
+
 
 
 ## Install & Start
