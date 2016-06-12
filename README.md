@@ -8,7 +8,7 @@ https://github.com/ngrx/store
 
 https://github.com/ngrx/example-app
 
-Comprehensive Introduction to @ngrx/store
+Comprehensive Introduction to @ngrx/store  
 https://gist.github.com/btroncone/a6e4347326749f938510
 
 https://github.com/btroncone/ngrx-examples
@@ -19,8 +19,11 @@ https://github.com/mgechev/codelyzer
 
 https://github.com/ngrx/ngrx.github.io
 
-A Comprehensive Guide to Test-First Development with Redux, React, and Immutable
+A Comprehensive Guide to Test-First Development with Redux, React, and Immutable  
 http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
+
+Angular2 State & Data Demo  
+https://github.com/JavascriptMick/ng2-state-demo
 
 https://github.com/driftyco/ionic/issues/6685 - fixed in beta.8
 
