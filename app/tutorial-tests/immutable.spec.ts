@@ -4,7 +4,7 @@ import {
     describe,
     expect,
     // injectAsync,
-    it,
+    it
 } from '@angular/core/testing';
 
 // From: http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html

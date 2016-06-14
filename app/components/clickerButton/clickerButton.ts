@@ -8,7 +8,7 @@ import { Clickers }  from '../../services/clickers';
   selector: 'clicker-button',
   inputs: ['clicker: clicker'],
   templateUrl: 'build/components/clickerButton/clickerButton.html',
-  directives: [Button],
+  directives: [Button]
 })
 
 export class ClickerButton {

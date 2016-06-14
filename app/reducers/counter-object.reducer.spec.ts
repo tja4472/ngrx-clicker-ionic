@@ -6,7 +6,7 @@ import {
     describe,
     expect,
     // injectAsync,
-    it,
+    it
 }                               from '@angular/core/testing';
 /* tslint:disable */
 // had issue with jasmine typing conflicts, this is temporary workaround

@@ -9,7 +9,7 @@ import { ClickerForm }         from '../../components/clickerForm/clickerForm';
 @Component({
   templateUrl: 'build/pages/clickerList/clickerList.html',
   providers: [Clickers],
-  directives: [ClickerButton, ClickerForm],
+  directives: [ClickerButton, ClickerForm]
 })
 
 export class ClickerList {

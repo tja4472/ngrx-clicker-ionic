@@ -9,7 +9,7 @@ setBaseTestProviders(
   TEST_BROWSER_STATIC_PLATFORM_PROVIDERS,
   [
     BROWSER_APP_DYNAMIC_PROVIDERS,
-    ADDITIONAL_TEST_BROWSER_PROVIDERS,
+    ADDITIONAL_TEST_BROWSER_PROVIDERS
   ]
 );
 
@@ -39,7 +39,7 @@ describe('ClickerApp', () => {
   });
 
   it('initialises with three possible pages', () => {
-    expect(clickerApp['pages'].length).toEqual(3);
+    expect(clickerApp['pages'].length).toEqual(6);
   });
 
   it('initialises with a root page', () => {

@@ -13,7 +13,7 @@ import { NotesServiceStoreOnly } from '../../services/notes.service.store_only';
     templateUrl: 'build/notes/components/notes/notes.component.html',
     // styleUrls: ['notes.component.css'],
     directives: [NoteComponent],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotesComponent implements OnInit {
     public notes: Observable<Note[]>;

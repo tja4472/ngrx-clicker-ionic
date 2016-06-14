@@ -11,7 +11,7 @@ export interface CounterActionsState {
 }
 
 const initialState: CounterActionsState = {
-    counter: 0,
+    counter: 0
 };
 /* tslint:disable */
 export const counterObject: ActionReducer<CounterActionsState> = (state = initialState, action: Action) => {

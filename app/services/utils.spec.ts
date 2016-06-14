@@ -3,7 +3,7 @@ import { AbstractControl, Control } from '@angular/common';
 import {
     describe,
     expect,
-    it,
+    it
 }                        from '@angular/core/testing';
 describe('Utils', () => {
 

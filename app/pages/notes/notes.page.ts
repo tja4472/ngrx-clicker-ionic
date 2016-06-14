@@ -18,7 +18,7 @@ import { NotesServiceStoreOnly } from '../../notes';
   changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [NotesComponent],
   providers: [NotesServiceStoreOnly],
-  templateUrl: 'build/pages/notes/notes.page.html',
+  templateUrl: 'build/pages/notes/notes.page.html'
 })
 export class NotesPage {
   constructor(

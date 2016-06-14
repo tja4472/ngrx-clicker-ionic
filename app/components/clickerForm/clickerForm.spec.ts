@@ -4,18 +4,18 @@ import {
   describe,
   expect,
   injectAsync,
-  it,
+  it
 }                        from '@angular/core/testing';
 import {
   ComponentFixture,
-  TestComponentBuilder,
+  TestComponentBuilder
 }                        from '@angular/compiler/testing';
 import { provide }       from '@angular/core';
 import {
   Config,
   Form,
   App,
-  Platform,
+  Platform
 }                        from 'ionic-angular';
 import { ClickerForm }   from './clickerForm';
 import { Clickers }      from '../../services/clickers';
@@ -52,7 +52,7 @@ describe('ClickerForm', () => {
     provide(Clickers, {useClass: MockClickers}),
     provide(App, {useClass: MockClass}),
     provide(Platform, {useClass: MockClass}),
-    provide(Config, {useClass: MockClass}),
+    provide(Config, {useClass: MockClass})
   ]);
 
   beforeEach(injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {

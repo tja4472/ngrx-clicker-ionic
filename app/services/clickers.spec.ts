@@ -50,7 +50,7 @@ function storageRemoveStub(key: string): Promise<{}> {
 let mockSqlStorage: Object = {
   get: storageGetStub,
   set: storageSetStub,
-  remove: storageRemoveStub,
+  remove: storageRemoveStub
 };
 
 describe('Clickers', () => {

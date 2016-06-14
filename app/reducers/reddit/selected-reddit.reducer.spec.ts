@@ -7,7 +7,7 @@ import {
     describe,
     expect,
     // injectAsync,
-    it,
+    it
 } from '@angular/core/testing';
 /* tslint:disable */
 

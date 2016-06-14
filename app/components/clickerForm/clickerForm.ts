@@ -9,7 +9,7 @@ import { Utils }                                                  from '../../se
 @Component({
   selector: 'clicker-form',
   templateUrl: 'build/components/clickerForm/clickerForm.html',
-  directives: [Button, Icon, Item, Label, TextInput],
+  directives: [Button, Icon, Item, Label, TextInput]
 })
 
 export class ClickerForm {
@@ -22,7 +22,7 @@ export class ClickerForm {
     this.clickerService = clickerService;
 
     this.form = fb.group({
-      clickerNameInput: ['', Validators.required],
+      clickerNameInput: ['', Validators.required]
     });
 
     this.clickerNameInput = this.form.controls['clickerNameInput'];

@@ -4,11 +4,11 @@ import {
   describe,
   expect,
   injectAsync,
-  it,
+  it
 }                               from '@angular/core/testing';
 import {
   ComponentFixture,
-  TestComponentBuilder,
+  TestComponentBuilder
 }                               from '@angular/compiler/testing';
 import { provide }              from '@angular/core';
 import { ClickerList }          from './clickerList';
@@ -19,7 +19,7 @@ import {
   App,
   NavController,
   NavParams,
-  Platform,
+  Platform
 }                               from 'ionic-angular';
 
 class MockClass {
@@ -47,7 +47,7 @@ describe('ClickerList', () => {
     provide(NavParams, {useClass: MockClass}),
     provide(Config, {useClass: MockClass}),
     provide(App, {useClass: MockClass}),
-    provide(Platform, {useClass: MockClass}),
+    provide(Platform, {useClass: MockClass})
   ]);
 
   beforeEach(injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {

@@ -3,7 +3,7 @@ import {
     // beforeEachProviders,
     describe,
     expect,
-    it,
+    it
     // inject,
 } from '@angular/core/testing';
 // import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
@@ -17,18 +17,18 @@ describe('Reducer: Notes', () => {
             {
                 'colour': 'green',
                 'text': 'First Note from DB',
-                'id': 1,
+                'id': 1
             },
             {
                 'colour': 'green',
                 'text': 'Second Note from DB',
-                'id': 2,
+                'id': 2
             },
             {
                 'colour': 'green',
                 'text': 'Third Note from DB',
-                'id': 3,
-            },
+                'id': 3
+            }
         ];
 
     it('should update the item', () => {
@@ -39,9 +39,9 @@ describe('Reducer: Notes', () => {
                 'colour': 'green',
                 'text': 'new note 2',
                 'id': 2,
-                'dirty': true,
+                'dirty': true
             },
-            initialState[2],
+            initialState[2]
         ];
 
         let stateItems: any = notes(initialState, { type: 'UPDATE_NOTE_TEXT', payload: payload });

@@ -4,11 +4,11 @@ import {
   describe,
   expect,
   injectAsync,
-  it,
+  it
 }                        from '@angular/core/testing';
 import {
   ComponentFixture,
-  TestComponentBuilder,
+  TestComponentBuilder
 }                        from '@angular/compiler/testing';
 import { provide }       from '@angular/core';
 import { Config }        from 'ionic-angular';
@@ -41,7 +41,7 @@ describe('ClickerButton', () => {
 
   beforeEachProviders(() => [
     provide(Clickers, {useClass: MockClickers}),
-    provide(Config, {useClass: MockClass}),
+    provide(Config, {useClass: MockClass})
   ]);
 
   beforeEach(injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {

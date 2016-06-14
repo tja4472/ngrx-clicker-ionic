@@ -5,7 +5,7 @@ import { Note } from '../../note.model';
 @Component({
     moduleId: module.id,
     selector: 'app-note',
-    templateUrl: 'build/notes/components/note/note.component.html',
+    templateUrl: 'build/notes/components/note/note.component.html'
     // styleUrls: ['note.component.css']
 })
 export class NoteComponent {
