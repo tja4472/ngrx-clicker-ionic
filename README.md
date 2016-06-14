@@ -27,7 +27,15 @@ https://github.com/JavascriptMick/ng2-state-demo
 
 https://github.com/driftyco/ionic/issues/6685 - fixed in beta.8
 
+http://palantir.github.io/tslint/rules/
 
+You will also need to install the json-server NPM package globally via npm i -g json-server.
+
+In seperate window.
+```
+# Run the backend server
+$npm run backend
+```
 
 ## Install & Start
 

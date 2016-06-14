@@ -4,9 +4,14 @@ import {Component} from '@angular/core';
 import { Type, ViewChild }                    from '@angular/core';
 import { ionicBootstrap, Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar }                          from 'ionic-native';
+
 import { ClickerList }                        from './pages/clickerList/clickerList';
 import { Page2 }                              from './pages/page2/page2';
+import { NotesPage }                         from './pages/notes/notes.page';
 import { RedditPage }                         from './pages/reddit/reddit';
+import {MyCollectionPage} from './pages/my-collection/my-collection.page';
+import {BrowseBooksPage} from './pages/browse-books/browse-books.page';
+
 import {RedditEffects} from "./effects/reddit-effects";
 import { provideStore, combineReducers} from '@ngrx/store';
 import {runEffects} from "@ngrx/effects";
@@ -16,12 +21,28 @@ import {Reddit} from "./services/reddit";
 import {storeLogger} from "ngrx-store-logger";
 import {RedditActions} from './actions';
 
+import { NotesDataService } from './notes';
+import { NotesEffectsService } from './notes';
+import { notes } from './notes/';
+
 export const APP_PROVIDERS: any[] = [
+  NotesDataService,
+//    provideStore({notes}),
+//    provideStore({notes}, {notes:[]}),
+/*  
   provideStore(
     storeLogger()(combineReducers({selectedReddit, postsByReddit}))
   ),
+*/  
+// {reducer1,reducer2}
+// those reducers are slices/branches/whatever of that one store
+
+
+  provideStore(
+    storeLogger()(combineReducers({notes, selectedReddit, postsByReddit}))
+  ),
   RedditActions,
-  runEffects(RedditEffects),
+  runEffects(RedditEffects, NotesEffectsService),
   Reddit
 ];
 
@@ -50,6 +71,9 @@ export class ClickerApp {
       { title: 'Clickers', component: ClickerList },
       { title: 'Goodbye Ionic', component: Page2 },
       { title: 'Async/Reddit example', component: RedditPage },
+      { title: 'Notes example', component: NotesPage },
+      { title: 'Books - My Collection', component: MyCollectionPage },      
+      { title: 'Books - Browse Books', component: BrowseBooksPage },        
     ];
   }
 

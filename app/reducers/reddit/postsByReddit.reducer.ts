@@ -20,6 +20,7 @@ const posts : ActionReducer<RedditPosts> = (state : RedditPosts = {
     didInvalidate: false,
     posts: []
 }, action: Action) => {
+    console.log('>>>>posts<<<<');
   switch(action.type) {
       case RedditActions.INVALIDATE_REDDIT:
           return Object.assign({}, state, {
@@ -43,6 +44,7 @@ const posts : ActionReducer<RedditPosts> = (state : RedditPosts = {
 };
 
 export const postsByReddit : ActionReducer<RedditPostsArray> = (state: RedditPostsArray = {}, action : Action) => {  
+      console.log('>>>>postsByReddit<<<<');
     switch (action.type) {
         case RedditActions.INVALIDATE_REDDIT:
         case RedditActions.RECEIVE_POSTS:

@@ -1,0 +1,40 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "text": "First Note from DB"
+    },
+    {
+      "id": 2,
+      "text": "Second Note from DB"
+    },
+    {
+      "colour": "blue",
+      "text": "Third Note from DB",
+      "id": 3
+    },
+    {
+      "id": "ef92a410-2d4f-11e6-9a3c-bdf6393dc116",
+      "text": "The fourth note. XXXXzz"
+    },
+    {
+      "text": 555555,
+      "colour": "red",
+      "id": "04e86c10-30ba-11e6-b4c7-33bd4aa384bc"
+    },
+    {
+      "id": "c6cf6720-3173-11e6-b4c7-33bd4aa384bc",
+      "text": "lllll"
+    },
+    {
+      "text": "QQQQQQQ",
+      "colour": "red",
+      "id": "35ebc4f0-3174-11e6-90b0-094fa578097e"
+    },
+    {
+      "text": "kkkkkkkkk",
+      "colour": "red",
+      "id": "3b040fd0-3177-11e6-8f29-ef70f35cb05a"
+    }
+  ]
+}

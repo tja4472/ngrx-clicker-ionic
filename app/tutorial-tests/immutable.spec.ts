@@ -12,13 +12,13 @@ describe('immutability', () => {
 
   describe('a number', () => {
 
-    function increment(currentState) {
+    function increment(currentState: number): number {
       return currentState + 1;
     }
 
     it('is immutable', () => {
-      let state = 42;
-      let nextState = increment(state);
+      let state: number = 42;
+      let nextState: number = increment(state);
 
       expect(nextState).toBe(43);
       expect(state).toBe(42);
