@@ -37,6 +37,24 @@ In seperate window.
 $npm run backend
 ```
 
+
+
+```typescript
+export function getBookIds() {
+  return (state$: Observable<CollectionState>) => state$
+    .select(s => s.ids);
+}
+```
+
+same as
+
+```typescript
+export function getBookIds() {
+  return function (state$: Observable<CollectionState>) {
+     return state$.select(s => s.ids);
+  };
+}
+```
 ## Install & Start
 
 ```bash
