@@ -21,7 +21,7 @@ import { compose } from '@ngrx/core/compose';
  * with superpowers. They are handy for all sorts of tasks, including
  * logging, undo/redo, and more.
  */
-import { storeLogger } from 'ngrx-store-logger';
+// import { storeLogger } from 'ngrx-store-logger';
 
 /**
  * combineReducers is another useful metareducer that takes a map of reducer
@@ -31,7 +31,7 @@ import { storeLogger } from 'ngrx-store-logger';
  * 
  * More: https://egghead.io/lessons/javascript-redux-implementing-combinereducers-from-scratch
  */
-import { combineReducers } from '@ngrx/store';
+// import { combineReducers } from '@ngrx/store';
 
 /**
  * @ngrx/router-store keeps the router in sync with @ngrx/store. To connect the
@@ -48,6 +48,13 @@ import { routerReducer, RouterState } from '@ngrx/router-store';
 import searchReducer, * as fromSearch from './search';
 import booksReducer, * as fromBooks from './books';
 import collectionReducer, * as fromCollection from './collection';
+
+export {
+  booksReducer,
+  collectionReducer,
+  routerReducer,
+  searchReducer
+};
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
@@ -67,13 +74,14 @@ export interface AppState {
  * wrapping that in storeLogger. Remember that compose applies
  * the result from right to left.
  */
+/*
 export default compose(storeLogger(), combineReducers)({
   router: routerReducer,
   search: searchReducer,
   books: booksReducer,
   collection: collectionReducer
 });
-
+*/
 /**
  * A selector function is a map function factory. We pass it parameters and it
  * returns a function that maps from the larger state tree into a smaller

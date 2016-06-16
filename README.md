@@ -22,6 +22,9 @@ https://github.com/ngrx/ngrx.github.io
 A Comprehensive Guide to Test-First Development with Redux, React, and Immutable  
 http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
 
+https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details
+
+
 Angular2 State & Data Demo  
 https://github.com/JavascriptMick/ng2-state-demo
 

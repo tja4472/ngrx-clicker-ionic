@@ -9,10 +9,20 @@ import { Observable } from 'rxjs/Observable';
 export type QueryInput = string;
 export type SearchOutput = string;
 
+/*
+    <md-input placeholder="Search for a book" [value]="query" (keyup)="keyup$.next($event)"></md-input>
+*/
+
 @Component({
   selector: 'book-search',
   // directives: [ MD_INPUT_DIRECTIVES ],
   template: `
+  <ion-item>
+    <ion-label floating>Search for a book</ion-label>
+    <ion-input type="text" [value]="query" (keyup)="keyup$.next($event)"></ion-input>
+  </ion-item>
+
+book search++{{query}}++
     <md-input placeholder="Search for a book" [value]="query" (keyup)="keyup$.next($event)"></md-input>
   `,
   styles: [`
@@ -28,7 +38,7 @@ export class BookSearchComponent {
    */
   public keyup$: Subject<KeyboardEvent> = new Subject<KeyboardEvent>();
 
-  @Input() public query: QueryInput = '';
+  @Input() query: QueryInput = '';
   @Output() public search: Observable<SearchOutput> = this.keyup$
     .debounceTime(300)
     .map(event => (event.target as HTMLInputElement).value)

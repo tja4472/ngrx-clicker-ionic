@@ -16,7 +16,7 @@ export type BookInput = Book;
   //  MD_LIST_DIRECTIVES
   // ],
   template: `
-    <a [linkTo]=" '/book/' + id">
+
       <md-card>
         <md-card-title-group>
           <md-card-title>{{ title }}</md-card-title>
@@ -33,7 +33,7 @@ export type BookInput = Book;
           </span>
         </md-card-footer>
       </md-card>
-    </a>
+
   `,
   styles: [`
     md-card {

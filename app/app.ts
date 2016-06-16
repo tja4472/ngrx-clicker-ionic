@@ -13,6 +13,8 @@ import {MyCollectionPage} from './pages/my-collection/my-collection.page';
 import {BrowseBooksPage} from './pages/browse-books/browse-books.page';
 
 import {RedditEffects} from "./effects/reddit-effects";
+
+import { provideDB } from '@ngrx/db';
 import { provideStore, combineReducers} from '@ngrx/store';
 import {runEffects} from "@ngrx/effects";
 import {postsByReddit} from "./reducers/reddit/postsByReddit.reducer"
@@ -25,25 +27,64 @@ import { NotesDataService } from './notes';
 import { NotesEffectsService } from './notes';
 import { notes } from './notes/';
 
+// books-feature
+import actions from './books-feature/actions';
+import schema from './books-feature/db-schema';
+
+import * as BooksReducers  from './books-feature/reducers';
+// import {booksReducer, collectionReducer, routerReducer, searchReducer} from './books-feature/reducers';
+
+import effects from './books-feature/effects';
+import services from './books-feature/services';
+import { compose } from '@ngrx/core/compose';
+
 export const APP_PROVIDERS: any[] = [
   NotesDataService,
-//    provideStore({notes}),
-//    provideStore({notes}, {notes:[]}),
-/*  
-  provideStore(
-    storeLogger()(combineReducers({selectedReddit, postsByReddit}))
+  //    provideStore({notes}),
+  //    provideStore({notes}, {notes:[]}),
+  /*  
+    provideStore(
+      storeLogger()(combineReducers({selectedReddit, postsByReddit}))
+    ),
+  */
+  // {reducer1,reducer2}
+  // those reducers are slices/branches/whatever of that one store
+
+  provideStore(compose(storeLogger(), combineReducers)({
+    notes,
+    selectedReddit,
+    postsByReddit,
+    router: BooksReducers.routerReducer,
+    search: BooksReducers.searchReducer,
+    books: BooksReducers.booksReducer,
+    collection: BooksReducers.collectionReducer
+  })
   ),
-*/  
-// {reducer1,reducer2}
-// those reducers are slices/branches/whatever of that one store
 
 
-  provideStore(
-    storeLogger()(combineReducers({notes, selectedReddit, postsByReddit}))
-  ),
+  /*
+    provideStore(
+      storeLogger()(combineReducers({notes, selectedReddit, postsByReddit}))
+    ),
+  */
+  /*
+  provideStore(booksReducers),
+  */
   RedditActions,
-  runEffects(RedditEffects, NotesEffectsService),
-  Reddit
+  runEffects(RedditEffects, NotesEffectsService, effects),
+  Reddit,
+  /**
+   * provideDB sets up @ngrx/db with the provided schema and makes the Database
+   * service everywhere.
+   */
+  provideDB(schema),
+
+  /**
+   * Finall we provide additional services and action creators so they can
+   * be used by all of our components, effects, and guards.
+   */
+  services,
+  actions
 ];
 
 @Component({
@@ -72,8 +113,8 @@ export class ClickerApp {
       { title: 'Goodbye Ionic', component: Page2 },
       { title: 'Async/Reddit example', component: RedditPage },
       { title: 'Notes example', component: NotesPage },
-      { title: 'Books - My Collection', component: MyCollectionPage },      
-      { title: 'Books - Browse Books', component: BrowseBooksPage },        
+      { title: 'Books - My Collection', component: MyCollectionPage },
+      { title: 'Books - Browse Books', component: BrowseBooksPage },
     ];
   }
 
