@@ -78,7 +78,7 @@
     ],
     "triple-equals": [true],
     "typedef": [
-      true,
+      false,
       "parameter",
       "property-declaration",
       "variable-declaration",
