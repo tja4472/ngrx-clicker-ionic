@@ -10,7 +10,7 @@ export type SearchOutput = string;
 
 @Component({
   selector: 'book-search',
-  templateUrl: 'build/books-feature/components/book-search/book-search.html',
+  templateUrl: 'build/books-feature/components/book-search/book-search.html'
 })
 export class BookSearchComponent {
   /**

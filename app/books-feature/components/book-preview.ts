@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Book } from '../models';
 import { AddCommasPipe } from '../pipes/add-commas';
@@ -7,6 +7,7 @@ import { EllipsisPipe } from '../pipes/ellipsis';
 // import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
 export type BookInput = Book;
+export type BookClickedOutput = string;
 
 @Component({
   selector: 'book-preview',
@@ -16,6 +17,11 @@ export type BookInput = Book;
   //  MD_LIST_DIRECTIVES
   // ],
   template: `
+ <ion-card (click)="bookClicked.emit(id)">
+    <ion-card-header>
+        <h2>{{ title }}</h2>
+    </ion-card-header> 
+ </ion-card>
 
       <md-card>
         <md-card-title-group>
@@ -67,6 +73,7 @@ export type BookInput = Book;
 })
 export class BookPreviewComponent {
   @Input() public book: BookInput;
+  @Output() bookClicked = new EventEmitter<BookClickedOutput>();
 
   get id() {
     return this.book.id;
