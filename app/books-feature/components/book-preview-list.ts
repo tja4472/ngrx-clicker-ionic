@@ -4,6 +4,8 @@ import { BookPreviewComponent, BookInput } from './book-preview';
 
 export type BooksInput = BookInput[];
 
+// <ion-card *ngFor="#repo of foundRepos" (click)="goToDetails(repo)">  
+
 @Component({
   selector: 'book-preview-list',
   directives: [ BookPreviewComponent ],

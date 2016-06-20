@@ -4,32 +4,13 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import { Component, Output, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
-// import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 
 export type QueryInput = string;
 export type SearchOutput = string;
 
-/*
-    <md-input placeholder="Search for a book" [value]="query" (keyup)="keyup$.next($event)"></md-input>
-*/
-
 @Component({
   selector: 'book-search',
-  // directives: [ MD_INPUT_DIRECTIVES ],
-  template: `
-  <ion-item>
-    <ion-label floating>Search for a book</ion-label>
-    <ion-input type="text" [value]="query" (keyup)="keyup$.next($event)"></ion-input>
-  </ion-item>
-
-book search++{{query}}++
-    <md-input placeholder="Search for a book" [value]="query" (keyup)="keyup$.next($event)"></md-input>
-  `,
-  styles: [`
-    md-input {
-      width: 300px;
-    }
-  `]
+  templateUrl: 'build/books-feature/components/book-search/book-search.html',
 })
 export class BookSearchComponent {
   /**
