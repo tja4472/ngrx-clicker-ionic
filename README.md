@@ -11,6 +11,9 @@ https://github.com/ngrx/example-app
 Comprehensive Introduction to @ngrx/store  
 https://gist.github.com/btroncone/a6e4347326749f938510
 
+RxJS 5 Operators By Example
+https://gist.github.com/btroncone/d6cf141d6f2c00dc6b35
+
 https://github.com/btroncone/ngrx-examples
 
 https://angular.io/docs/ts/latest/guide/style-guide.html

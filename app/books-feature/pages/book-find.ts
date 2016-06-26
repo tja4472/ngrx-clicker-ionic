@@ -1,5 +1,6 @@
 import 'rxjs/add/operator/let';
 import 'rxjs/add/operator/take';
+import { NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -8,6 +9,10 @@ import { AppState, getSearchResults, getSearchQuery } from '../reducers';
 import { BookActions } from '../actions';
 import { BookSearchComponent, QueryInput, SearchOutput } from '../components/book-search/book-search';
 import { BookPreviewListComponent, BooksInput, BookClickedOutput } from '../components/book-preview-list';
+
+import { BookViewPage } from './book-view';
+import { Page2 } from '../../pages/page2/page2';
+
 // import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 /*
@@ -36,7 +41,10 @@ export class BookFindPage {
   public searchQuery$: Observable<QueryInput>;
   public books$: Observable<BooksInput>;
 
-  constructor(private store: Store<AppState>, private bookActions: BookActions) {
+  constructor(
+    private store: Store<AppState>,
+    private nav: NavController,
+    private bookActions: BookActions) {
     /**
      * Selectors can be applied with the `let` operator, which passes the source
      * observable to the provided function. This allows us an expressive,
@@ -74,5 +82,7 @@ export class BookFindPage {
     console.log('BookFindPage:bookClicked:', bookId);
 
     // Now open bookView page.
+    this.nav.push(BookViewPage, bookId);
+    // this.nav.push(Page2);    
   }
 }
