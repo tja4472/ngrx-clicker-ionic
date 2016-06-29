@@ -20,6 +20,7 @@ export class BookActions {
     };
   }
 
+/*
   public static SEARCH_COMPLETE: string = '[Book] Search Complete';
   public searchComplete(results: Book[]): Action {
     return {
@@ -27,6 +28,7 @@ export class BookActions {
       payload: results
     };
   }
+*/
 
   public static ADD_TO_COLLECTION: string = '[Book] Add to Collection';
   public addToCollection(book: Book): Action {

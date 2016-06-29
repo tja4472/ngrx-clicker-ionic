@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
 
 import { Book } from '../models';
-import { BookActions } from '../actions/book';
+import { BookActions, SearchCompleteAction } from '../actions';
 
 export interface SearchState {
   ids: string[];
@@ -28,7 +28,7 @@ export default function(state: SearchState = initialState, action: Action): Sear
       });
     }
 
-    case BookActions.SEARCH_COMPLETE: {
+    case SearchCompleteAction.ACTION: {
       const books: Book[] = action.payload;
 
       return {

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Action } from '@ngrx/store';
 
 import { Book } from '../models';
-import { BookActions } from '../actions';
+import { BookActions, SearchCompleteAction } from '../actions';
 
 export interface BooksState {
   ids: string[];
@@ -18,7 +18,7 @@ const initialState: BooksState = {
 
 export default function (state: BooksState = initialState, action: Action): BooksState {
   switch (action.type) {
-    case BookActions.SEARCH_COMPLETE:
+    case SearchCompleteAction.ACTION:
     case BookActions.LOAD_COLLECTION_SUCCESS: {
       const books: Book[] = action.payload;
       const newBooks: Book[] = books.filter(book => !state.entities[book.id]);

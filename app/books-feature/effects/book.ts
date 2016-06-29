@@ -17,6 +17,7 @@ import { AppState } from '../reducers';
 import { GoogleBooksService } from '../services/google-books';
 import { BookActions } from '../actions/book';
 import { Book } from '../models';
+import { SearchCompleteAction } from '../actions';
 
 @Injectable()
 export class BookEffects {
@@ -25,6 +26,7 @@ export class BookEffects {
     private googleBooks: GoogleBooksService,
     private db: Database,
     private bookActions: BookActions
+    // private searchCompleteAction: SearchCompleteAction
   ) { }
 
 /**
@@ -54,6 +56,21 @@ export class BookEffects {
     .map<string>(toPayload)
     .filter(query => query !== '')
     .switchMap(query => this.googleBooks.searchBooks(query)
+      .map(books => new SearchCompleteAction(books))
+      .catch(() => Observable.of(new SearchCompleteAction([])))
+    );
+
+  @Effect() public clearSearch$: Observable<Action> = this.updates$
+    .whenAction(BookActions.SEARCH)
+    .map<string>(toPayload)
+    .filter(query => query === '')
+    .mapTo(new SearchCompleteAction([]));
+/*
+  @Effect() public search$: Observable<Action> = this.updates$
+    .whenAction(BookActions.SEARCH)
+    .map<string>(toPayload)
+    .filter(query => query !== '')
+    .switchMap(query => this.googleBooks.searchBooks(query)
       .map(books => this.bookActions.searchComplete(books))
       .catch(() => Observable.of(this.bookActions.searchComplete([])))
     );
@@ -63,6 +80,7 @@ export class BookEffects {
     .map<string>(toPayload)
     .filter(query => query === '')
     .mapTo(this.bookActions.searchComplete([]));
+*/
 
   @Effect() public addBookToCollection$: Observable<Action> = this.updates$
     .whenAction(BookActions.ADD_TO_COLLECTION)
