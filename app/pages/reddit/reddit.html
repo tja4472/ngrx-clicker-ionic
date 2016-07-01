@@ -1,23 +1,19 @@
-<ion-navbar *navbar>
-  <button menuToggle>
+<ion-header>
+	<ion-navbar>
+		<button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>{{title}}</ion-title>
-</ion-navbar>
+		<ion-title>{{title}}</ion-title>
+	</ion-navbar>
+</ion-header>
 
 <ion-content>
-		<h2>Currently Displaying: {{redditModel.selectedReddit$ | async}}</h2>
-		<h5>Last Updated: {{(redditModel.lastUpdated$ | async) | date:'mediumTime'}}</h5>
-			<reddit-select
-				(redditSelect)="selectReddit($event)"
-				>
-			</reddit-select>
-			<refresh-button
-				[selectedReddit]="(redditModel.selectedReddit$ | async)"
-				(invalidateReddit)="invalidateReddit($event)">
-			</refresh-button>
-			<reddit-list
-				[posts]="(redditModel.posts$ | async)"
-				[isFetching]="(redditModel.isFetching$ | async)">
-			</reddit-list>
+	<h2>Currently Displaying: {{redditModel.selectedReddit$ | async}}</h2>
+	<h5>Last Updated: {{(redditModel.lastUpdated$ | async) | date:'mediumTime'}}</h5>
+	<reddit-select (redditSelect)="selectReddit($event)">
+	</reddit-select>
+	<refresh-button [selectedReddit]="(redditModel.selectedReddit$ | async)" (invalidateReddit)="invalidateReddit($event)">
+	</refresh-button>
+	<reddit-list [posts]="(redditModel.posts$ | async)" [isFetching]="(redditModel.isFetching$ | async)">
+	</reddit-list>
 </ion-content>

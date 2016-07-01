@@ -21,12 +21,14 @@ import {
   // selector: 'book-view-page',
   directives: [BookDetailComponent],
   template: `
-<ion-navbar *navbar>
+  <ion-header>
+<ion-navbar>
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
   <ion-title>{{title}}</ion-title>
 </ion-navbar>
+</ion-header>
 
 <ion-content>
     <book-detail

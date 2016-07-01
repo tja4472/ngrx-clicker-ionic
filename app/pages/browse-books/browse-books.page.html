@@ -1,13 +1,15 @@
-<ion-navbar *navbar>
-  <button menuToggle>
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Browse Books</ion-title>
-</ion-navbar>
+    <ion-title>Browse Books</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
-      <button (click)="goToOtherPage()">
+  <button (click)="goToOtherPage()">
         Go to OtherPage
-      </button>  
+      </button>
   <book-find-page></book-find-page>
 </ion-content>
