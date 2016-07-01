@@ -11,7 +11,6 @@ import { BookSearchComponent, QueryInput, SearchOutput } from '../components/boo
 import { BookPreviewListComponent, BooksInput, BookClickedOutput } from '../components/book-preview-list';
 
 import { BookViewPage } from './book-view';
-import { Page2 } from '../../pages/page2/page2';
 
 // import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 

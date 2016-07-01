@@ -48,7 +48,7 @@ export class BookViewPage {
     private store: Store<AppState>,
     private bookActions: BookActions,
     private navParams: NavParams
-    //private routeParams$: RouteParams
+    // private routeParams$: RouteParams
   ) {
     console.log('BookViewPage:', navParams);
     this.bookId = navParams.data;
@@ -65,7 +65,6 @@ export class BookViewPage {
       .switchMap(id => store.let(isBookInCollection(id)));
       */
   }
-
 
   addToCollection(book: AddOutput) {
     this.store.dispatch(this.bookActions.addToCollection(book));

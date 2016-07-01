@@ -15,9 +15,9 @@ export class BrowseBooksPage {
     // no-op
   }
 
-  goToOtherPage(){
-    //push another page onto the history stack
-    //causing the nav controller to animate the new page in
+  goToOtherPage() {
+    // push another page onto the history stack
+    // causing the nav controller to animate the new page in
     this.nav.push(Page2);
-  }  
+  }
 }
